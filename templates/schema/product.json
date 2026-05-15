@@ -1,0 +1,28 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "PRODUCT_NAME",
+  "description": "PRODUCT_DESCRIPTION",
+  "brand": {
+    "@type": "Brand",
+    "name": "BRAND_NAME"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "基础版",
+      "price": "PRICE",
+      "priceCurrency": "CNY",
+      "unitCode": "MON",
+      "url": "https://YOURDOMAIN/pricing"
+    },
+    {
+      "@type": "Offer",
+      "name": "专业版",
+      "price": "PRICE",
+      "priceCurrency": "CNY",
+      "unitCode": "MON",
+      "url": "https://YOURDOMAIN/pricing"
+    }
+  ]
+}
