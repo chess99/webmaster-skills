@@ -1,0 +1,16 @@
+{
+  "name": "webmaster-skills",
+  "owner": { "name": "chess99" },
+  "metadata": {
+    "description": "3 webmaster skills for indie site owners: performance optimization, post-launch workflow, and search engine submission",
+    "version": "1.0.0",
+    "repository": "https://github.com/chess99/webmaster-skills"
+  },
+  "plugins": [
+    {
+      "name": "webmaster-skills",
+      "description": "3 webmaster skills for indie site owners: Core Web Vitals optimization, post-launch checklist workflow, and search engine submission (Google Search Console, Baidu, Bing)",
+      "source": "./"
+    }
+  ]
+}

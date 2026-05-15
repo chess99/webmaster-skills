@@ -1,0 +1,10 @@
+{
+  "name": "webmaster-skills",
+  "description": "Webmaster skills for indie site owners — Core Web Vitals optimization, post-launch checklist, and search engine submission",
+  "version": "1.0.0",
+  "author": { "name": "chess99" },
+  "homepage": "https://github.com/chess99/webmaster-skills",
+  "repository": "https://github.com/chess99/webmaster-skills",
+  "license": "MIT",
+  "skills": "./skills"
+}
