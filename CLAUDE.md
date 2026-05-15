@@ -1,26 +1,28 @@
-# webmaster-workflows
+# webmaster-skills
 
-个人站长工作流知识库。
+Claude Code plugin — webmaster skill collection for indie site owners.
 
-## 这个仓库是什么
+## Skills
 
-可复用的网站运营工作流，覆盖：SEO 优化、性能调优、搜索引擎上报、数据分析。
-不绑定任何具体项目，所有内容均为通用模板或工作流指引。
+- `performance` — Core Web Vitals diagnosis and optimization
+- `post-launch` — New site launch workflow (orchestrates other skills)
+- `search-console` — Search engine submission (GSC, Baidu, Bing)
 
-## 核心资源
+## Install
 
-- `workflows/` — 各工作域的操作手册
-- `scripts/` — 可直接运行的自动化脚本
-- `templates/` — 可复制粘贴的配置文件模板
+```bash
+/plugin install chess99/webmaster-skills
+```
 
-## 关键 Skill
+## Dependencies
 
-- `/static-site-post-launch` — 新站上线后 SEO + 性能完整清单（在 ~/.claude/skills/）
-- `marketing-skills:seo-audit` — 全站 SEO 诊断
-- `marketing-skills:schema-markup` — 结构化数据实现
-- `marketing-skills:ai-seo` — AI 搜索引擎优化
-- `web-performance-optimization` — Core Web Vitals 专项
+`post-launch` calls marketing-skills. Install both:
 
-## 使用方式
+```bash
+/plugin install coreyhaines31/marketingskills
+/plugin install chess99/webmaster-skills
+```
 
-对新网站运行：`/static-site-post-launch`，按 skill 的清单逐步执行。
+## Skill Format
+
+Each skill: one directory + `SKILL.md` with YAML frontmatter (`name` + `description`). Optional `references/` subdirectory for detailed docs loaded on demand.

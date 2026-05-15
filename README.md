@@ -1,54 +1,41 @@
-# webmaster-workflows
+# webmaster-skills
 
-个人站长可复用工作流知识库，覆盖 SEO、性能、搜索引擎上报、内容维护。不绑定任何具体项目。
+Webmaster skills for indie site owners. Works with Claude Code and any agent that supports the [Agent Skills spec](https://agentskills.io).
 
-## 快速开始
+## Install
 
-**新站刚上线？**
-
-```
-/static-site-post-launch
+```bash
+/plugin install chess99/webmaster-skills
 ```
 
-在任意网站项目中运行该 skill，按清单逐步执行 SEO + 性能完整优化。
+Also install [marketing-skills](https://github.com/coreyhaines31/marketingskills) — the `post-launch` skill builds on it:
 
-## 目录结构
-
-```
-webmaster-workflows/
-├── workflows/                 # 操作手册（按工作域分类）
-│   ├── post-launch/           # 新站上线后优化
-│   │   ├── README.md          # 执行顺序总览
-│   │   ├── seo-checklist.md   # SEO 完整清单
-│   │   ├── performance.md     # Core Web Vitals 优化
-│   │   └── search-console.md  # 搜索引擎上报步骤
-│   ├── content-refresh/       # 内容定期维护（待扩展）
-│   └── analytics/             # 数据分析（待扩展）
-│
-├── scripts/                   # 可直接运行的自动化脚本
-│   ├── generate-sitemap.js    # 扫描 HTML 文件生成 sitemap.xml
-│   ├── submit-baidu.sh        # 百度主动推送所有 URL
-│   └── check-headers.sh       # 验证线上响应头
-│
-└── templates/                 # 可复制粘贴的配置模板
-    ├── robots.txt
-    ├── _headers               # Cloudflare Pages 响应头
-    ├── llms.txt.tmpl
-    ├── sitemap.xml.tmpl
-    ├── sitemap-multilang.xml.tmpl
-    └── schema/                # JSON-LD 结构化数据模板
-        ├── website-org.json
-        ├── faqpage.json
-        ├── product.json
-        └── breadcrumb.json
+```bash
+/plugin install coreyhaines31/marketingskills
 ```
 
-## 相关 Skills
+## Available Skills
 
-| Skill | 用途 |
-|---|---|
-| `/static-site-post-launch` | 新站上线完整清单（SEO + 性能 + 上报） |
-| `marketing-skills:seo-audit` | 全站 SEO 诊断 |
-| `marketing-skills:schema-markup` | 结构化数据实现 |
-| `marketing-skills:ai-seo` | AI 搜索引擎优化 |
-| `web-performance-optimization` | Core Web Vitals 专项优化 |
+| Skill | Description |
+|-------|-------------|
+| [performance](skills/performance/) | Diagnose and fix Core Web Vitals (LCP, CLS, INP). Runs PageSpeed Insights automatically and gives targeted fixes. |
+| [post-launch](skills/post-launch/) | Full post-launch workflow for new sites — validates files, orchestrates schema, AI SEO, performance, search engine submission, and analytics setup in order. |
+| [search-console](skills/search-console/) | Submit your site to Google Search Console, Baidu, and Bing. Handles verification, sitemap submission, and Baidu active push via curl. |
+
+## How Skills Work Together
+
+`post-launch` is the entry point — it calls the other skills in the right order:
+
+```
+post-launch
+  ├── 1. Validate robots.txt / sitemap.xml / llms.txt
+  ├── 2. marketing-skills:schema
+  ├── 3. marketing-skills:ai-seo
+  ├── 4. webmaster-skills:performance  ←
+  ├── 5. webmaster-skills:search-console  ←
+  └── 6. marketing-skills:analytics
+```
+
+## Contributing
+
+PRs welcome. Each skill is a single `SKILL.md` file under `skills/<name>/`. See [Agent Skills spec](https://agentskills.io/specification.md) for format requirements.
