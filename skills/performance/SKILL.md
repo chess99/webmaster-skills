@@ -26,7 +26,7 @@ Then read `psi-result.json` and extract:
 - `lighthouseResult.categories.performance.score` (0-1, multiply by 100)
 - `lighthouseResult.audits.largest-contentful-paint.displayValue`
 - `lighthouseResult.audits.cumulative-layout-shift.displayValue`
-- `lighthouseResult.audits.interactive.displayValue`
+- `lighthouseResult.audits.interaction-to-next-paint.displayValue`
 - `lighthouseResult.audits.total-blocking-time.displayValue`
 - `lighthouseResult.audits.speed-index.displayValue`
 
@@ -101,7 +101,9 @@ Convert to WebP/AVIF if served as JPEG/PNG. Most static site build tools do this
 
 After implementing, re-run PageSpeed:
 ```bash
-curl -s "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=URL_HERE&strategy=mobile" | grep -E '"largest-contentful-paint|cumulative-layout-shift|interactive"' -A 3
+curl -s "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=URL_HERE&strategy=mobile" \
+  | python3 -m json.tool \
+  | grep -E '"interaction-to-next-paint|largest-contentful-paint|cumulative-layout-shift"' -A 3
 ```
 
 ## Related Skills

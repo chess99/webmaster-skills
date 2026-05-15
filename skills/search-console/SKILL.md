@@ -123,3 +123,5 @@ Check Baidu:
 
 - `webmaster-skills:post-launch` — full post-launch workflow
 - `marketing-skills:seo-audit` — audit after indexing
+
+For detailed API error responses, IndexNow setup, and Baidu crawl diagnostics, see `references/submit-engines.md`.

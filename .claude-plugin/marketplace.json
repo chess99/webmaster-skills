@@ -1,6 +1,6 @@
 {
   "name": "webmaster-skills",
-  "owner": { "name": "chess99" },
+  "owner": { "name": "chess99", "url": "https://github.com/chess99" },
   "metadata": {
     "description": "3 webmaster skills for indie site owners: performance optimization, post-launch workflow, and search engine submission",
     "version": "1.0.0",
