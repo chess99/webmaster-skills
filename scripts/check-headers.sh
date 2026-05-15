@@ -26,7 +26,7 @@ check() {
   local url="${BASE_URL}${path}"
 
   local headers
-  headers=$(curl -sI --max-time 10 "$url") || { echo "FAIL  $url (connection error)"; ((FAIL++)); return; }
+  headers=$(curl -sI --max-time 10 "$url") || { echo "FAIL  $url (connection error)"; FAIL=$((FAIL + 1)); return; }
 
   local status
   status=$(echo "$headers" | grep -oP '(?<=HTTP/\S* )\d+' | head -1)
@@ -36,10 +36,10 @@ check() {
 
   if [[ "$status" == "200" ]] && echo "$content_type" | grep -qi "$expected_type"; then
     echo "OK    $url  [$status]  $content_type"
-    ((PASS++))
+    PASS=$((PASS + 1))
   else
     echo "FAIL  $url  [$status]  got: '$content_type'  expected: '$expected_type'"
-    ((FAIL++))
+    FAIL=$((FAIL + 1))
   fi
 }
 
