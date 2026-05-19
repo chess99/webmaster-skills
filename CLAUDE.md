@@ -33,6 +33,10 @@ vendor/marketing/ ← vendored from coreyhaines31/marketingskills v2.0
 .claude/skills/   ← symlinks to both, auto-discovered by Claude Code
 ```
 
+## Editing Rules
+
+**Do not modify files under `vendor/`** unless explicitly asked. These are vendored verbatim from upstream. Changes create a diff that's hard to reconcile when updating.
+
 ## Skill Format
 
 Each skill: one directory + `SKILL.md` with YAML frontmatter (`name` + `description`). Optional `references/` subdirectory for detailed docs loaded on demand.
