@@ -25,6 +25,14 @@ Claude Code plugin — webmaster skill collection for indie site owners.
 /plugin install chess99/webmaster-skills
 ```
 
+## Directory Structure
+
+```
+skills/           ← first-party skills (this repo)
+vendor/marketing/ ← vendored from coreyhaines31/marketingskills v2.0
+.claude/skills/   ← symlinks to both, auto-discovered by Claude Code
+```
+
 ## Skill Format
 
 Each skill: one directory + `SKILL.md` with YAML frontmatter (`name` + `description`). Optional `references/` subdirectory for detailed docs loaded on demand.
