@@ -1,15 +1,24 @@
+除非用户主动要求切分支，否则一般都直接在主分支或当前需求分支进行开发。
+除非用户主动指定语言，否则 README 之类的文档都用中文。
+每完成一个完整迭代（实现、验证、必要文档更新都结束）后，主动提交本次自己修改的文件，不等用户额外要求。提交时只包含本次自己修改的内容，禁止提交其他 agent 或用户并行修改的文件。提交前用 git diff --staged 确认暂存区只包含本次变更。
+
+--- project-doc ---
+
 # webmaster-skills
 
-Codex and Claude Code plugin — webmaster skill collection for indie site owners.
+Codex 和 Claude Code 插件：面向独立站长的 webmaster 技能集合。
 
 ## Skills
 
 ### Webmaster
-- `performance` — Core Web Vitals diagnosis and optimization
-- `post-launch` — New site launch workflow (orchestrates other skills)
-- `search-console` — Search engine submission (GSC, Baidu, Bing)
+
+- `performance` — Core Web Vitals 诊断与优化
+- `post-launch` — 新站上线工作流，会编排其他技能
+- `seo-research` — SEO 调研工作流：竞对关键词、关键词缺口、热词机会、相似网站发现、对比页/alternative 页规划、排名诊断、AI 搜索引用检查
+- `search-console` — 搜索引擎提交，包括 GSC、百度、Bing
 
 ### Marketing (from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills))
+
 - `seo-audit` / `ai-seo` / `programmatic-seo` / `site-architecture` / `schema` — SEO & Discovery
 - `cro` / `signup` / `onboarding` / `popups` / `paywalls` — Conversion Optimization
 - `copywriting` / `copy-editing` / `cold-email` / `emails` / `social` / `image` — Content & Copy
@@ -27,11 +36,11 @@ Codex and Claude Code plugin — webmaster skill collection for indie site owner
 
 ## Directory Structure
 
-```
-skills/           ← first-party skills (this repo)
-vendor/marketing/ ← vendored from coreyhaines31/marketingskills v2.0
-.claude/skills/   ← symlink to skills/, auto-discovered by Claude Code
-.agents/skills/   ← symlink to skills/, auto-discovered by Codex-compatible agents
+```text
+skills/           first-party skills (this repo)
+vendor/marketing/ vendored from coreyhaines31/marketingskills v2.0
+.claude/skills    points to skills/, auto-discovered by Claude Code
+.agents/skills    points to skills/, auto-discovered by Codex-compatible agents
 ```
 
 ## Editing Rules
