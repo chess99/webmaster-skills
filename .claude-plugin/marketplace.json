@@ -2,14 +2,14 @@
   "name": "webmaster-skills",
   "owner": { "name": "chess99", "url": "https://github.com/chess99" },
   "metadata": {
-    "description": "Webmaster skill collection for indie site owners: 3 first-party skills (Core Web Vitals, post-launch workflow, search engine submission) + 40 vendored marketing skills (SEO, CRO, content, analytics, and more)",
-    "version": "1.0.0",
+    "description": "Agent-led product discovery, webmaster, SEO, launch, performance, and growth skills for independent developers",
+    "version": "1.1.0",
     "repository": "https://github.com/chess99/webmaster-skills"
   },
   "plugins": [
     {
       "name": "webmaster-skills",
-      "description": "Webmaster skill collection for indie site owners: 3 first-party skills (Core Web Vitals, post-launch workflow, search engine submission) + 40 vendored marketing skills (SEO, CRO, content, analytics, and more)",
+      "description": "Agent-led product discovery, webmaster, SEO, launch, performance, and growth skills for independent developers",
       "source": "./"
     }
   ]

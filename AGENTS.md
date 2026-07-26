@@ -6,9 +6,13 @@
 
 # webmaster-skills
 
-Codex 和 Claude Code 插件：面向独立站长的 webmaster 技能集合。
+Codex 和 Claude Code 插件：面向独立开发者的产品发现、建站与增长技能集合。
 
 ## Skills
+
+### Product Discovery
+
+- `find-product-opportunities` — 自主发现、验证并排序软件产品机会，交付 Top 3 与主推荐或 NO-GO
 
 ### Webmaster
 
@@ -38,15 +42,30 @@ Codex 和 Claude Code 插件：面向独立站长的 webmaster 技能集合。
 
 ```text
 skills/           first-party skills (this repo)
+tests/            first-party skill tests
 vendor/marketing/ vendored from coreyhaines31/marketingskills v2.0
 .claude/skills    points to skills/, auto-discovered by Claude Code
 .agents/skills    points to skills/, auto-discovered by Codex-compatible agents
+.catpaw/skills    points to skills/, auto-discovered by CatPaw-compatible agents
 ```
+
+## Opportunity Research Rules
+
+- `find-product-opportunities` 必须由 Agent 主导完整研究，不得把选词、切换数据页面、整理证据或最终排序交回用户手工完成。
+- 公开证据应足以完成基础报告；登录浏览器、付费工具和用户导出只能增强置信度，不能成为硬依赖。
+- 不得把趋势指数、SERP 数量、页面文案或模型推断表述为搜索量、排名、流量、收入或付费意愿事实。
+- 必须主动寻找反证；证据不足时输出 NO-GO，不得为凑足 Top 3 编造候选或来源。
+- 研究默认只在对话中交付。只有用户明确要求保存时才创建研究工件，且私有导出、登录数据和研究工件不得提交到本公开仓库。
+- 不自动注册服务、联系潜在客户、购买数据、发布内容或开始开发；这些动作需要单独授权。
 
 ## Editing Rules
 
 **Do not modify files under `vendor/`** unless explicitly asked. These are vendored verbatim from upstream. Changes create a diff that's hard to reconcile when updating.
 
+Root `AGENTS.md` and `skills/` are the canonical instruction and skill sources. Compatibility entry points must reference them instead of duplicating content.
+
+Opportunity Radar helper code uses only the Python 3.11+ standard library. New helper behavior requires tests, and all tests plus official Skill/plugin validation must pass before committing.
+
 ## Skill Format
 
-Each skill: one directory + `SKILL.md` with YAML frontmatter (`name` + `description`). Optional `references/` subdirectory for detailed docs loaded on demand.
+Each skill: one directory + `SKILL.md` with YAML frontmatter (`name` + `description`). Optional `references/`, `scripts/`, `assets/`, and `evals/` directories hold resources loaded or executed on demand.

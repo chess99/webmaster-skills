@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "label": "trigger",
+      "prompt": "我是全栈独立开发者，帮我从建筑行业找三个值得做的软件产品机会。",
+      "expected": ["最多三个关键问题", "多源证据", "Top 3", "主推荐或 NO-GO"]
+    },
+    {
+      "label": "trigger",
+      "prompt": "What should I build for English-speaking accountants if I only have six weeks?",
+      "expected": ["global English market", "software opportunity discovery", "builder constraints"]
+    },
+    {
+      "label": "non-trigger",
+      "prompt": "分析我现有网站的 Google Search Console 数据并安排下个月的 SEO 文章。",
+      "expected": ["do not run open-ended product discovery", "route to SEO research"]
+    },
+    {
+      "label": "non-trigger",
+      "prompt": "我已经决定做兽医排班 SaaS，只验证这个想法是否值得做。",
+      "expected": ["do not generate 20-40 unrelated candidates", "route to focused validation"]
+    },
+    {
+      "label": "no-go",
+      "prompt": "在没有可靠付费或需求证据的冷门方向中给我三个必做产品。",
+      "expected": ["refuse to fabricate", "NO-GO is valid", "state evidence gaps"]
+    },
+    {
+      "label": "source-failure",
+      "prompt": "Google Trends 返回 429，继续完成产品机会研究。",
+      "expected": ["stop retrying", "switch signal source", "record data gap", "do not infer no demand"]
+    }
+  ]
+}

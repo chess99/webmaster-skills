@@ -1,6 +1,6 @@
 # webmaster-skills
 
-面向独立站长的 Codex / Claude Code 技能集合，用来处理新站上线、性能、搜索提交、SEO 调研等常见站长工作。
+面向独立开发者的产品发现、建站与增长技能集合，支持 Codex 和 Claude Code。它把找产品机会、SEO 调研、新站上线、性能优化和搜索提交串成由 Agent 主导的工作流。
 
 ## 安装
 
@@ -18,12 +18,27 @@
 
 | Skill | Description |
 |---|---|
+| [find-product-opportunities](skills/find-product-opportunities/) | 从模糊行业、受众或技术变化中自主发现、验证并排序软件产品机会，交付 Top 3 与主推荐或明确 NO-GO。 |
 | [performance](skills/performance/) | 诊断和优化 Core Web Vitals，包括 LCP、CLS、INP、TTFB 和 PageSpeed 问题。 |
 | [post-launch](skills/post-launch/) | 新站上线后的完整检查流程：基础文件、结构化数据、AI SEO、性能、搜索提交、统计。 |
 | [seo-research](skills/seo-research/) | SEO 调研流程：竞对关键词、关键词缺口、热词机会、相似网站、对比页/alternative 页、排名诊断、AI 搜索引用检查。 |
 | [search-console](skills/search-console/) | 提交站点到 Google Search Console、百度站长和 Bing，包括验证、sitemap 提交、百度主动推送。 |
 
 ## 技能如何配合
+
+`find-product-opportunities` 是最上游入口。它不提供网页，也不要求用户手工选词、切换趋势页面或整理证据；Agent 主导候选发散、公开证据采集、反证、评分和最终裁决。只有候选产品依赖搜索获客时，才进一步使用 `seo-research` 深挖 SEO 渠道。
+
+```text
+find-product-opportunities
+  ↓ 选定产品与首个分发路径
+seo-research
+  ↓ 规划搜索市场与页面
+post-launch
+  ↓ 上线检查
+performance / search-console / marketing skills
+```
+
+产品机会报告默认直接在对话中交付，包含 Top 3、一个主推荐、证据与反证、kill criteria 和 7 天验证实验；证据不足时输出 NO-GO。
 
 `post-launch` 适合新站刚上线时使用，它会按顺序调用其他技能：
 
@@ -43,16 +58,18 @@ post-launch
 
 ```text
 skills/           first-party skills
+tests/            first-party skill tests
 vendor/marketing/ vendored from coreyhaines31/marketingskills v2.0
 .claude/skills    points to skills/ for Claude Code discovery
 .agents/skills    points to skills/ for Codex-compatible agents
+.catpaw/skills    points to skills/ for CatPaw-compatible agents
 ```
 
 ## 编辑规则
 
 不要直接修改 `vendor/` 下的文件，除非是在同步上游 vendored 版本。这些文件来自外部项目，随意改动会让后续更新变难。
 
-每个技能是一个目录加一个 `SKILL.md`，可选 `references/` 存放按需读取的详细说明。
+每个技能是一个目录加一个 `SKILL.md`，可选 `references/`、`scripts/`、`assets/` 和 `evals/` 存放按需加载的资源。根目录 `skills/` 是唯一事实源，兼容目录只引用它。
 
 ## 贡献
 

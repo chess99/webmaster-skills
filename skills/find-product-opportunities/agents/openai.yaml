@@ -1,0 +1,4 @@
+interface:
+  display_name: "Opportunity Radar"
+  short_description: "Find evidence-backed software product opportunities"
+  default_prompt: "Use $find-product-opportunities to research and rank software product opportunities for an independent developer."
