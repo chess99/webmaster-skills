@@ -1,6 +1,6 @@
 # webmaster-skills
 
-面向独立开发者的产品发现、建站与增长技能集合，支持 Codex 和 Claude Code。它把找产品机会、SEO 调研、新站上线、性能优化和搜索提交串成由 Agent 主导的工作流。
+面向独立开发者的产品发现、建站与增长技能集合，支持 Codex 和 Claude Code。它把找产品机会、SEO 调研、新站上线、性能优化、搜索提交和外链运营串成由 Agent 主导的工作流。
 
 ## 安装
 
@@ -23,6 +23,7 @@
 | [post-launch](skills/post-launch/) | 新站上线后的完整检查流程：基础文件、结构化数据、AI SEO、性能、搜索提交、统计。 |
 | [seo-research](skills/seo-research/) | SEO 调研流程：竞对关键词、关键词缺口、热词机会、相似网站、对比页/alternative 页、排名诊断、AI 搜索引用检查。 |
 | [search-console](skills/search-console/) | 提交站点到 Google Search Console、百度站长和 Bing，包括验证、sitemap 提交、百度主动推送。 |
+| [link-ops](skills/link-ops/) | 外链运营系统：反查竞品 referring domains、发现/评分外链机会、维护渠道库、准备 outreach 并复盘 referral 与排名效果。 |
 
 ## 技能如何配合
 
@@ -35,7 +36,11 @@ seo-research
   ↓ 规划搜索市场与页面
 post-launch
   ↓ 上线检查
-performance / search-console / marketing skills
+performance / search-console
+  ↓ 页面可抓取、可测量
+link-ops
+  ↓ 竞品反查、渠道积累、编辑引用与 referral
+marketing skills
 ```
 
 产品机会报告默认直接在对话中交付，包含 Top 3、一个主推荐、证据与反证、kill criteria 和 7 天验证实验；证据不足时输出 NO-GO。
@@ -53,6 +58,8 @@ post-launch
 ```
 
 `seo-research` 适合在上线前后决定下一批页面要做什么，例如竞品对比页、alternative 页、关键词缺口内容、热词驱动的小工具、AI 搜索引用优化。
+
+`link-ops` 适合站点已经有明确目标页之后使用。它不会把“外链数量”当目标，而是把竞品 backlink gap、资源页/榜单/教程、官方生态、社区、integration、broken link、linkable asset 和数字 PR 等机会统一入库、评分和复盘。默认只准备行动队列与草稿；对外提交、联系、注册或购买 placement 需要用户另行授权。
 
 ## 目录结构
 

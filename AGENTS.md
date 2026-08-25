@@ -20,6 +20,7 @@ Codex 和 Claude Code 插件：面向独立开发者的产品发现、建站与�
 - `post-launch` — 新站上线工作流，会编排其他技能
 - `seo-research` — SEO 调研工作流：竞对关键词、关键词缺口、热词机会、相似网站发现、对比页/alternative 页规划、排名诊断、AI 搜索引用检查
 - `search-console` — 搜索引擎提交，包括 GSC、百度、Bing
+- `link-ops` — 外链运营系统：竞品反查、机会发现/评分、渠道库、外联准备与效果复盘
 
 ### Marketing (from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills))
 
@@ -58,13 +59,20 @@ vendor/marketing/ vendored from coreyhaines31/marketingskills v2.0
 - 研究默认只在对话中交付。只有用户明确要求保存时才创建研究工件，且私有导出、登录数据和研究工件不得提交到本公开仓库。
 - 不自动注册服务、联系潜在客户、购买数据、发布内容或开始开发；这些动作需要单独授权。
 
+## Link Ops Rules
+
+- `link-ops` 的默认输出是研究、prospect 数据、评分、行动队列和草稿；提交目录、发邮件/DM、评论、注册、互链和购买 placement 等外部状态变更需要用户明确授权。
+- 不把 backlink 数量、DR/DA 或 dofollow 比例当作目标本身；优先独立 referring domains、主题相关性、编辑选择性、真实 referral 和可复用渠道资产。
+- 不自动化批量评论、论坛签名、低质量目录、PBN/站群、规模化互链或其他明显 link-spam。
+- 用户提供的 backlink 导出、联系人和 campaign workspace 属于私有运行数据，不得提交到本公开仓库。
+
 ## Editing Rules
 
 **Do not modify files under `vendor/`** unless explicitly asked. These are vendored verbatim from upstream. Changes create a diff that's hard to reconcile when updating.
 
 Root `AGENTS.md` and `skills/` are the canonical instruction and skill sources. Compatibility entry points must reference them instead of duplicating content.
 
-Opportunity Radar helper code uses only the Python 3.11+ standard library. New helper behavior requires tests, and all tests plus official Skill/plugin validation must pass before committing.
+Opportunity Radar and Link Ops helper code use only the Python 3.11+ standard library. New helper behavior requires tests, and all tests plus official Skill/plugin validation must pass before committing.
 
 ## Skill Format
 

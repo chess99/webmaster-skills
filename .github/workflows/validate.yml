@@ -19,4 +19,4 @@ jobs:
       - name: Unit and integration tests
         run: python -m unittest discover -s tests -v
       - name: Compile Python sources
-        run: python -m compileall -q skills/find-product-opportunities/scripts
+        run: python -m compileall -q skills/find-product-opportunities/scripts skills/link-ops/scripts
